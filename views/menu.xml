@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_view_dashboard_sale_order" model="ir.actions.act_window">
+        <field name="name">Dashboard</field>
+        <field name="res_model">sale.order</field>
+        <field name="view_mode">graph,pivot</field>
+    </record>
+
+    <record id="action_view_sale_order" model="ir.actions.act_window">
+        <field name="name">Suscripciones</field>
+        <field name="res_model">sale.order</field>
+        <field name="view_mode">list,kanban,form</field>
+    </record>
+    
+    <record id="action_view_product_template" model="ir.actions.act_window">      
+        <field name="name">Planes</field>
+        <field name="res_model">product.template</field>
+        <field name="view_mode">kanban,list,form</field>
+    </record>
+
+    <record id="action_view_res_partner" model="ir.actions.act_window">
+        <field name="name">Clientes</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">kanban,list,form</field>
+    </record>    
+    
+    <menuitem
+        id="zuap_menu_main"
+        name="Zuap"
+        action="action_view_dashboard_sale_order"/>
+
+    <menuitem
+        id="menu_zuap_dashboard"
+        name="Dashboard"
+        parent="zuap_menu_main"
+        action="action_view_dashboard_sale_order"        
+        sequence="1"/>
+
+    <menuitem
+        id="menu_zuap_subscriptions_menu"
+        name="Suscripciones"
+        parent="zuap_menu_main"
+        action="action_view_sale_order"
+        sequence="2"/>
+    
+    <menuitem
+        id="menu_zuap_subscriptions_plans"
+        name="Planes"
+        parent="zuap_menu_main"
+        action="action_view_product_template"        
+        sequence="3"/>
+
+    <menuitem
+        id="menu_zuap_clients"
+        name="Clientes"
+        parent="zuap_menu_main"
+        action="action_view_res_partner"
+        sequence="4"/>           
+</odoo>
